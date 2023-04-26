@@ -75,74 +75,78 @@ class WbSalesReportsJob implements ShouldQueue
             true
         );
 
-        $wbSalesReports = array_map(
-            fn ($salesReport) => [
-                'realizationreport_id'  => $salesReport['realizationreport_id'],
-                'date_from'             => $salesReport['date_from'],
-                'date_to'               => $salesReport['date_to'],
-                'create_dt'             => $salesReport['create_dt'],
-                'suppliercontract_code' => $salesReport['suppliercontract_code'],
-                'rrd_id'                => $salesReport['rrd_id'],
-                'gi_id'                 => $salesReport['gi_id'],
-                'subject_name'          => $salesReport['subject_name'],
-                'nm_id'         => $salesReport['nm_id'],
-                'brand_name'    => $salesReport['brand_name'],
-                'sa_name'       => $salesReport['sa_name'],
-                'ts_name'       => $salesReport['ts_name'],
-                'barcode'       => $salesReport['barcode'],
-                'doc_type_name' => $salesReport['doc_type_name'],
-                'quantity'      => $salesReport['quantity'],
-                'retail_price'  => $salesReport['retail_price'],
-                'retail_amount' => $salesReport['retail_amount'],
-                'sale_percent'  => $salesReport['sale_percent'],
-                'commission_percent' => $salesReport['commission_percent'],
+        if ($reports) {
 
-                'office_name'        => $salesReport['office_name'],
-                'supplier_oper_name' => $salesReport['supplier_oper_name'],
-                'order_dt'           => $salesReport['order_dt'],
-                'sale_dt'            => $salesReport['sale_dt'],
-                'rr_dt'              => $salesReport['rr_dt'],
-                'shk_id'             => $salesReport['shk_id'],
-                'retail_price_withdisc_rub' => $salesReport['retail_price_withdisc_rub'],
-                'delivery_amount'       => $salesReport['delivery_amount'],
-                'return_amount'         => $salesReport['return_amount'],
-                'delivery_rub'          => $salesReport['delivery_rub'],
-                'gi_box_type_name'      => $salesReport['gi_box_type_name'],
-                'product_discount_for_report' => $salesReport['product_discount_for_report'],
-                'supplier_promo'        => $salesReport['supplier_promo'],
-                'rid'                   => $salesReport['rid'],
+            $wbSalesReports = array_map(
+                fn ($salesReport) => [
+                    'realizationreport_id'  => $salesReport['realizationreport_id'],
+                    'date_from'             => $salesReport['date_from'],
+                    'date_to'               => $salesReport['date_to'],
+                    'create_dt'             => $salesReport['create_dt'],
+                    'suppliercontract_code' => $salesReport['suppliercontract_code'],
+                    'rrd_id'                => $salesReport['rrd_id'],
+                    'gi_id'                 => $salesReport['gi_id'],
+                    'subject_name'          => $salesReport['subject_name'],
+                    'nm_id'         => $salesReport['nm_id'],
+                    'brand_name'    => $salesReport['brand_name'],
+                    'sa_name'       => $salesReport['sa_name'],
+                    'ts_name'       => $salesReport['ts_name'],
+                    'barcode'       => $salesReport['barcode'],
+                    'doc_type_name' => $salesReport['doc_type_name'],
+                    'quantity'      => $salesReport['quantity'],
+                    'retail_price'  => $salesReport['retail_price'],
+                    'retail_amount' => $salesReport['retail_amount'],
+                    'sale_percent'  => $salesReport['sale_percent'],
+                    'commission_percent' => $salesReport['commission_percent'],
 
-                'ppvz_spp_prc'          => $salesReport['ppvz_spp_prc'],
-                'ppvz_kvw_prc_base'     => $salesReport['ppvz_kvw_prc_base'],
-                'ppvz_kvw_prc'          => $salesReport['ppvz_kvw_prc'],
-                'ppvz_sales_commission' => $salesReport['ppvz_sales_commission'],
-                'ppvz_for_pay'          => $salesReport['ppvz_for_pay'],
-                'ppvz_reward'           => $salesReport['ppvz_reward'],
-                'acquiring_fee'         => $salesReport['acquiring_fee'] ?? '',
-                'acquiring_bank'        => $salesReport['acquiring_bank'] ?? '',
-                'ppvz_vw'               => $salesReport['ppvz_vw'],
-                'ppvz_vw_nds'           => $salesReport['ppvz_vw_nds'],
-                'ppvz_office_id'        => $salesReport['ppvz_office_id'],
-                'ppvz_office_name'      => $salesReport['ppvz_office_name'] ?? '',
-                'ppvz_supplier_id'      => $salesReport['ppvz_supplier_id'],
-                'ppvz_supplier_name'    => $salesReport['ppvz_supplier_name'],
-                'ppvz_inn'              => $salesReport['ppvz_inn'],
+                    'office_name'        => $salesReport['office_name'],
+                    'supplier_oper_name' => $salesReport['supplier_oper_name'],
+                    'order_dt'           => $salesReport['order_dt'],
+                    'sale_dt'            => $salesReport['sale_dt'],
+                    'rr_dt'              => $salesReport['rr_dt'],
+                    'shk_id'             => $salesReport['shk_id'],
+                    'retail_price_withdisc_rub' => $salesReport['retail_price_withdisc_rub'],
+                    'delivery_amount'       => $salesReport['delivery_amount'],
+                    'return_amount'         => $salesReport['return_amount'],
+                    'delivery_rub'          => $salesReport['delivery_rub'],
+                    'gi_box_type_name'      => $salesReport['gi_box_type_name'],
+                    'product_discount_for_report' => $salesReport['product_discount_for_report'],
+                    'supplier_promo'        => $salesReport['supplier_promo'],
+                    'rid'                   => $salesReport['rid'],
 
-                'declaration_number' => $salesReport['declaration_number'],
-                'bonus_type_name'    => $salesReport['bonus_type_name'] ?? '',
-                'sticker_id'         => $salesReport['sticker_id'],
-                'site_country'       => $salesReport['site_country'],
-                'penalty'            => $salesReport['penalty'],
-                'additional_payment' => $salesReport['additional_payment'],
-                'srid'               => $salesReport['srid'],
-            ],
-            $reports
-        );
+                    'ppvz_spp_prc'          => $salesReport['ppvz_spp_prc'],
+                    'ppvz_kvw_prc_base'     => $salesReport['ppvz_kvw_prc_base'],
+                    'ppvz_kvw_prc'          => $salesReport['ppvz_kvw_prc'],
+                    'ppvz_sales_commission' => $salesReport['ppvz_sales_commission'],
+                    'ppvz_for_pay'          => $salesReport['ppvz_for_pay'],
+                    'ppvz_reward'           => $salesReport['ppvz_reward'],
+                    'acquiring_fee'         => $salesReport['acquiring_fee'] ?? '',
+                    'acquiring_bank'        => $salesReport['acquiring_bank'] ?? '',
+                    'ppvz_vw'               => $salesReport['ppvz_vw'],
+                    'ppvz_vw_nds'           => $salesReport['ppvz_vw_nds'],
+                    'ppvz_office_id'        => $salesReport['ppvz_office_id'],
+                    'ppvz_office_name'      => $salesReport['ppvz_office_name'] ?? '',
+                    'ppvz_supplier_id'      => $salesReport['ppvz_supplier_id'],
+                    'ppvz_supplier_name'    => $salesReport['ppvz_supplier_name'],
+                    'ppvz_inn'              => $salesReport['ppvz_inn'],
 
-        array_map(
-            fn ($wbSalesReportsChunk) =>
-            WbSalesReport::query()->upsert($wbSalesReportsChunk, ['rrd_id']),
-            array_chunk($wbSalesReports, 1000)
-        );
+                    'declaration_number' => $salesReport['declaration_number'],
+                    'bonus_type_name'    => $salesReport['bonus_type_name'] ?? '',
+                    'sticker_id'         => $salesReport['sticker_id'],
+                    'site_country'       => $salesReport['site_country'],
+                    'penalty'            => $salesReport['penalty'],
+                    'additional_payment' => $salesReport['additional_payment'],
+                    'srid'               => $salesReport['srid'],
+                ],
+                $reports
+            );
+
+            array_map(
+                fn ($wbSalesReportsChunk) =>
+                WbSalesReport::query()->upsert($wbSalesReportsChunk, ['rrd_id']),
+                array_chunk($wbSalesReports, 1000)
+            );
+        } else
+            Log::error(__METHOD__.' : empty response');
     }
 }
