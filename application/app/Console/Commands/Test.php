@@ -35,7 +35,7 @@ class Test extends Command
         $rows = DB::table('general')
             ->where('updated_at', null)
             ->select('*')
-            ->orderByDesc('id')
+//            ->orderByDesc('id')
             ->get();
 //dd($rows->count());
         $i = 1;
@@ -103,6 +103,11 @@ class Test extends Command
             if (strripos($row->ppvz_kvw_prc_base, ',') !== false) {
 
                 $array['ppvz_kvw_prc_base'] = str_replace(',', '.', $row->ppvz_kvw_prc_base);
+            }
+
+            if (strripos($row->ppvz_kvw_prc, ',') !== false) {
+
+                $array['ppvz_kvw_prc'] = str_replace(',', '.', $row->ppvz_kvw_prc);
             }
 
             if (count($array) > 0) {
