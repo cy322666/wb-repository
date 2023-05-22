@@ -126,6 +126,7 @@
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/dragonmantank/cron-expression" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/spatie/flare-client-php" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/symfony/yaml" />
+      <excludeFolder url="file://$MODULE_DIR$/application/vendor/league/flysystem-local" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

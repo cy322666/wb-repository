@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:postgresql://localhost:5427/clever</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="wb-prod" uuid="e5ad91a8-be0b-4ffc-80f2-3a9d61445279">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://62.113.105.154:5427/clever</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
