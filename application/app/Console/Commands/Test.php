@@ -33,9 +33,9 @@ class Test extends Command
         $baseMemory = memory_get_usage();
 
         $rows = DB::table('general')
-            ->where('updated_at', null)
+//            ->where('updated_at', null)
             ->select('*')
-//            ->orderByDesc('id')
+            ->orderBy('updated_at')
             ->get();
 //dd($rows->count());
         $i = 1;
@@ -162,9 +162,10 @@ class Test extends Command
 
             $i++;
 
-            unset($array);
+            dump( $i.' : '.$row->id.' => '.memory_get_usage() - $baseMemory);
 
-            dump( $i.' => '.memory_get_usage() - $baseMemory);
+            unset($array);
+            unset($row);
         }
 
         return CommandAlias::SUCCESS;

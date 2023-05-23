@@ -33,6 +33,8 @@ return new class extends Migration
             $table->float('penalty')->change();
             $table->float('additional_payment')->change();
         });
+
+        DB::statement("ALTER TABLE general ALTER order_dt TYPE TIMESTAMP(0) WITHOUT TIME ZONE USING date_from::timestamp(0) without time zone");
     }
 
     /**
