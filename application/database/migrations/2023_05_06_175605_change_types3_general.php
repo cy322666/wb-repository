@@ -14,27 +14,24 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('general', function (Blueprint $table) {
-            $table->float('delivery_rub')->change();
-            $table->float('retail_amount')->change();
-            $table->float('commission_percent')->change();
-            $table->float('retail_price_withdisc_rub')->change();
-            $table->float('product_discount_for_report')->change();
-            $table->float('supplier_promo')->change();
-            $table->float('ppvz_spp_prc')->change();
-            $table->float('ppvz_kvw_prc_base')->change();
-            $table->float('ppvz_kvw_prc')->change();
-            $table->float('ppvz_sales_commission')->change();
-            $table->float('ppvz_for_pay')->change();
-            $table->float('ppvz_reward')->change();
-            $table->float('acquiring_fee')->change();
-            $table->float('ppvz_vw')->change();
-            $table->float('ppvz_vw_nds')->change();
-            $table->float('penalty')->change();
-            $table->float('additional_payment')->change();
-        });
-
-        DB::statement("ALTER TABLE general ALTER order_dt TYPE TIMESTAMP(0) WITHOUT TIME ZONE USING date_from::timestamp(0) without time zone");
+        DB::statement("ALTER TABLE general ALTER delivery_rub TYPE DOUBLE PRECISION USING delivery_rub::double precision");
+        DB::statement("ALTER TABLE general ALTER retail_amount TYPE DOUBLE PRECISION USING retail_amount::double precision");
+        DB::statement("ALTER TABLE general ALTER commission_percent TYPE DOUBLE PRECISION USING commission_percent::double precision");
+        DB::statement("ALTER TABLE general ALTER retail_price_withdisc_rub TYPE DOUBLE PRECISION USING retail_price_withdisc_rub::double precision");
+        DB::statement("ALTER TABLE general ALTER product_discount_for_report TYPE DOUBLE PRECISION USING product_discount_for_report::double precision");
+        DB::statement("ALTER TABLE general ALTER supplier_promo TYPE DOUBLE PRECISION USING supplier_promo::double precision");
+        DB::statement("ALTER TABLE general ALTER ppvz_spp_prc TYPE DOUBLE PRECISION USING ppvz_spp_prc::double precision");
+        DB::statement("ALTER TABLE general ALTER ppvz_kvw_prc_base TYPE DOUBLE PRECISION USING ppvz_kvw_prc_base::double precision");
+        DB::statement("ALTER TABLE general ALTER ppvz_kvw_prc TYPE DOUBLE PRECISION USING ppvz_kvw_prc::double precision");
+        DB::statement("ALTER TABLE general ALTER ppvz_sales_commission TYPE DOUBLE PRECISION USING ppvz_sales_commission::double precision");
+        DB::statement("ALTER TABLE general ALTER ppvz_for_pay TYPE DOUBLE PRECISION USING ppvz_for_pay::double precision");
+        DB::statement("ALTER TABLE general ALTER ppvz_reward TYPE DOUBLE PRECISION USING ppvz_reward::double precision");
+        DB::statement("ALTER TABLE general ALTER acquiring_fee TYPE DOUBLE PRECISION USING acquiring_fee::double precision");
+        DB::statement("ALTER TABLE general ALTER ppvz_vw TYPE DOUBLE PRECISION USING ppvz_vw::double precision");
+        DB::statement("ALTER TABLE general ALTER ppvz_vw_nds TYPE DOUBLE PRECISION USING ppvz_vw_nds::double precision");
+        DB::statement("ALTER TABLE general ALTER penalty TYPE DOUBLE PRECISION USING penalty::double precision");
+        DB::statement("ALTER TABLE general ALTER additional_payment TYPE DOUBLE PRECISION USING additional_payment::double precision");
+        DB::statement("ALTER TABLE general ALTER order_dt TYPE TIMESTAMP(0) WITHOUT TIME ZONE USING order_dt::timestamp(0) without time zone");
     }
 
     /**
