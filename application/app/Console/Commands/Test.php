@@ -73,6 +73,10 @@ class Test extends Command
 
                 $array['delivery_rub'] = str_replace(',', '.', $row->delivery_rub);
             }
+            if (strripos($row->delivery_rub, ' ') !== false) {
+
+                $array['delivery_rub'] = str_replace(' ', '', $row->delivery_rub);
+            }
             if (strripos($row->commission_percent, ',') !== false) {
 
                 $array['commission_percent'] = str_replace(',', '.', $row->commission_percent);
