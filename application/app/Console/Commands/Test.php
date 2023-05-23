@@ -73,13 +73,9 @@ class Test extends Command
 
                 $array['delivery_rub'] = str_replace(',', '.', $row->delivery_rub);
             }
-            if (strripos($row->comission_percent, ',') !== false) {
+            if (strripos($row->commission_percent, ',') !== false) {
 
-                $array['commission_percent'] = str_replace(',', '.', $row->comission_percent);
-            }
-            if (strripos($row->comission_percent, ',') !== false) {
-
-                $array['commission_percent'] = str_replace(',', '.', $row->comission_percent);
+                $array['commission_percent'] = str_replace(',', '.', $row->commission_percent);
             }
             if (strripos($row->ppvz_for_pay, ',') !== false) {
 
