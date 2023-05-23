@@ -69,7 +69,50 @@ class Test extends Command
 
                 $array['retail_price'] = str_replace(',', '.', $row->retal_price);
             }
+            if (strripos($row->delivery_rub, ',') !== false) {
 
+                $array['delivery_rub'] = str_replace(',', '.', $row->delivery_rub);
+            }
+            if (strripos($row->comission_percent, ',') !== false) {
+
+                $array['commission_percent'] = str_replace(',', '.', $row->comission_percent);
+            }
+            if (strripos($row->comission_percent, ',') !== false) {
+
+                $array['commission_percent'] = str_replace(',', '.', $row->comission_percent);
+            }
+            if (strripos($row->ppvz_for_pay, ',') !== false) {
+
+                $array['ppvz_for_pay'] = str_replace(',', '.', $row->ppvz_for_pay);
+            }
+            if (strripos($row->ppvz_reward, ',') !== false) {
+
+                $array['ppvz_reward'] = str_replace(',', '.', $row->ppvz_reward);
+            }
+            if (strripos($row->acquiring_fee, ',') !== false) {
+
+                $array['acquiring_fee'] = str_replace(',', '.', $row->acquiring_fee);
+            }
+            if (strripos($row->ppvz_vw, ',') !== false) {
+
+                $array['ppvz_vw'] = str_replace(',', '.', $row->ppvz_vw);
+            }
+            if (strripos($row->ppvz_vw_nds, ',') !== false) {
+
+                $array['ppvz_vw_nds'] = str_replace(',', '.', $row->ppvz_vw_nds);
+            }
+            if (strripos($row->penalty, ',') !== false) {
+
+                $array['penalty'] = str_replace(',', '.', $row->penalty);
+            }
+            if (strripos($row->additional_payment, ',') !== false) {
+
+                $array['additional_payment'] = str_replace(',', '.', $row->additional_payment);
+            }
+            if (strripos($row->ppvz_sales_commission, ',') !== false) {
+
+                $array['ppvz_sales_commission'] = str_replace(',', '.', $row->ppvz_sales_commission);
+            }
             if (strripos($row->retail_amount, ',') !== false) {
 
                 $array['retail_amount'] = str_replace(',', '.', $row->retail_amount);
