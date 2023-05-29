@@ -59,12 +59,12 @@ class TestDB1 extends Command
             }
 
             if ($row->date_from == '31.12.1969') {
-                $array['date_to']   = Carbon::create(2022, 5, 6)->timestamp;
-                $array['date_from'] = Carbon::create(2022, 5, 6)->subDays(6)->timestamp;
+                $array['date_to']   = Carbon::create(2022, 5, 6);
+                $array['date_from'] = Carbon::create(2022, 5, 6)->subDays(6);
 
             } elseif ($row->date_to == $row->date_from) {
 
-                $array['date_from'] = Carbon::parse($row->date_to)->subDays(6)->timestamp;
+                $array['date_from'] = Carbon::parse($row->date_to)->subDays(6);
             }
 
             if (count($array) > 0) {
