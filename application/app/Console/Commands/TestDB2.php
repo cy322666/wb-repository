@@ -44,8 +44,8 @@ class TestDB2 extends Command
                 'rr_dt' => Carbon::parse($row->rr_dt)->format('Y-m-d H:i:s'),
             ];
 
-            if (strripos($row->sale_percent, '-') !== false) {
-                $array['sale_percent'] = str_replace('-', '', $row->sale_percent);
+            if (strripos($row->sale_percent, ',') !== false) {
+                $array['sale_percent'] = str_replace(',', '.', $row->sale_percent);
             }
 
             if (count($array) > 0) {
