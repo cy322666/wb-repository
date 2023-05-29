@@ -64,7 +64,7 @@ class TestDB1 extends Command
 
             } elseif ($row->date_to == $row->date_from) {
 
-                $array['date_from'] = Carbon::parse($array['date_to'])->subDays(6)->timestamp;
+                $array['date_from'] = Carbon::parse($row->date_to)->subDays(6)->timestamp;
             }
 
             if (count($array) > 0) {
