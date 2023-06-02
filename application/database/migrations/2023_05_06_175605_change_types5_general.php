@@ -18,8 +18,8 @@ return new class extends Migration
 
             DB::statement("ALTER TABLE general ALTER delivery_rub TYPE DOUBLE PRECISION USING delivery_rub::double precision");
 
-            $table->dateTime('sale_dt')->change();
-            $table->dateTime('rr_dt')->change();
+            DB::statement("ALTER TABLE general ALTER sale_dt TYPE TIMESTAMP(0) WITHOUT TIME ZONE USING sale_dt::timestamp(0) without time zone");
+            DB::statement("ALTER TABLE general ALTER rr_dt TYPE TIMESTAMP(0) WITHOUT TIME ZONE USING rr_dt::timestamp(0) without time zone");
         });
     }
 
