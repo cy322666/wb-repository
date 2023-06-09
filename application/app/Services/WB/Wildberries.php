@@ -653,18 +653,17 @@ class Wildberries
     public function getSupplierReportDetailByPeriod(
         DateTime $dateFrom,
         DateTime $dateTo,
-        int $limit = 0,
         int $rrdid = 0,
-        bool $is_UTC = false
+        int $limit = 0,
     ): ResponseInterface {
 
         $props = [
             'headers' => self::DEFAULT_HEADER + ['Authorization' => $this->keys['statistic']],
             'query'   => [
-                'dateFrom' => $dateFrom->format($is_UTC ? 'Y-m-d\TH:i:s\Z' : 'Y-m-d\TH:i:s'),
-                'dateTo'   => $dateTo->format($is_UTC ? 'Y-m-d\TH:i:s\Z' : 'Y-m-d\TH:i:s'),
-                'limit' => $limit,
-                'rrdid' => $rrdid,
+                'dateFrom' => $dateFrom->format('Y-m-d'),//($is_UTC ? 'Y-m-d\TH:i:s\Z' : 'Y-m-d\TH:i:s'),
+                'dateTo'   => $dateTo->format('Y-m-d'),//->format($is_UTC ? 'Y-m-d\TH:i:s\Z' : 'Y-m-d\TH:i:s'),
+                'limit'    => $limit,
+                'rrdid'    => $rrdid,
             ]
         ];
 
