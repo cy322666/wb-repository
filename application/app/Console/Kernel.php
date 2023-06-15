@@ -15,12 +15,11 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        //php artisan schedule:work
-        //php artisan schedule:list
+        $schedule->command('wb:incomes 2')->dailyAt('10:00');
+        $schedule->command('wb:incomes 2')->dailyAt('12:00');
 
-        $schedule->command('push:tasks')->everyMinute();
-
-//        $schedule->command('queue:monitor redis:wb --max=5')->everyMinute();
+        $schedule->command('wb:incomes 3')->dailyAt('14:00');
+        $schedule->command('wb:incomes 3')->dailyAt('16:00');
     }
 
     /**

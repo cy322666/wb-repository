@@ -30,7 +30,7 @@ class WbIncomesCommand extends Command
      */
     protected $description = "Получение поставок и обновление сущности 'поставки'";
 
-    private static int $limit = 2;//100_000
+    private static int $limit = 100_000;//100_000
     /**
      * Execute the console command.
      *
